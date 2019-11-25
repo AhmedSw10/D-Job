@@ -1,0 +1,57 @@
+﻿@model DJobA.Models.Job
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/shares/_MainLayout.cshtml";
+}
+
+<h2>Details OF Job</h2>
+
+<div class="form-horizontal card container text-secondary" style="background-color:rgba(87, 87, 87, 0.1); font-family:Bahnschrift;
+      height:auto; width:auto;">
+    <h4>Job</h4>
+    <hr />
+    <div class="form-horizontal  col-md-6" style="display:inline-block;">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Category.CategoryJob)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category.CategoryJob)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.JobTitle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.JobTitle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.JobDescribtion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.JobDescribtion)
+            </dd>
+        </dl>
+    </div>
+    <div class="form-horizontal  col-md-6">
+
+        <img src="~/Uploads/@Html.DisplayFor(model=>model.JobImage)" class="img-thumbnail" style="width:auto; height:auto;" />
+    </div>
+    <br />
+    <br />
+
+    <center>
+        <p>
+            @Html.ActionLink("Apply For Job", "Apply", new { id = Model.Id }, new { @class = "btn btn-outline-success" }) |
+            @Html.ActionLink("Back to Home", "Index")
+        </p>
+    </center>
+</div>
+<br />
+<br />
+

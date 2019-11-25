@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DJobA.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/shares/_MainLayout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Create New Job", "Create")
+</p>
+<table class="table-primary table "style="background-color:rgba(87, 87, 87, 0.1) !important;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryJob)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryJob)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
+<br /><br /><br />

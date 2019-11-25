@@ -1,0 +1,61 @@
+﻿@model DJobA.Models.Job
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/shares/_MainLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <center>
+
+        <hr />
+        <dl class="dl-horizontal card mb-3 col-md-8 text-secondary text-center " style="background-color:rgba(87, 87, 87, 0.1); font-family:Bahnschrift;
+      height:auto; width:auto">
+            <dt>
+                @Html.DisplayNameFor(model => model.Category.CategoryJob)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category.CategoryJob)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.JobTitle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.JobTitle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.JobDescribtion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.JobDescribtion)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.JobImage)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.JobImage)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-primary btn-sm" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </center>
+</div>

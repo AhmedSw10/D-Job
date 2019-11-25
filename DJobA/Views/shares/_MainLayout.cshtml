@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootswatch.min (2).css" rel="stylesheet" />
+    <link href="~/Content/bootswatchRule.min (1).css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/b53767f4b6.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+
+        .bg-primary {
+            background-color: rgba(0, 0, 0,0) !important;
+        }
+
+        .myf {
+            color: rgba(255, 255, 255, 0.5);
+            /*position: fixed;*/
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            font-size: small;
+            text-align: center
+        }
+
+        h4 {
+            text-align: left;
+        }
+
+        .S {
+            color: #0055d9;
+            font-size: 20PX;
+            font-family: Centaur;
+            font-family: 'Fjalla One', sans-serif;
+        }
+
+        .SS {
+            color: #0055d9;
+            font-size: 10PX;
+        }
+
+        .Stext {
+            color: #000000;
+            font-size: 20PX;
+            font-family: Centaur;
+            font-family: 'Fjalla One', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!---navbar-->
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12  ">
+
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary Stext">
+
+
+                    <div class="collapse navbar-collapse" id="navbarColor01">
+                        <ul class="navbar-nav Stext">
+                            <li class="nav-item active">
+                                <a class="nav-link Stext" href="~/Home/Index"> &nbsp;<span class="S"><i class="fas fa-home"></i> Home</span><span class="sr-only">(current)</span></a>
+                            </li>
+                            @*<li class="nav-item">
+                                <a class="nav-link" href="#"><span class="S">Features</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="S">Pricing</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="S">About</span></a>
+                            </li>*@
+                            @*<li class="nav-item">
+            <a class="nav-link" href="#">LOG IN</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Sign up</a>
+        </li>*@
+                            @Html.Partial("~/Views/shares/LogIn.cshtml")
+                           
+                        </ul>
+
+                    </div>
+                    <nav class="navbar ">
+                        <a class="navbar-brand" href="#">
+                            <img src="~/photo/job.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                            <span class="S">D-JOB</span><br />
+                            <p class="SS">Designer & Developer</p>
+                            
+
+
+                        </a>
+                    </nav>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                </nav>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="container">
+        @*<div class="row">*@
+
+            @RenderBody()
+        @*</div>*@
+
+    </div>
+    <!---footer-->
+
+    <footer class="modal-footer myf card text-white " style="background-color:#031431; font-family:Bahnschrift;
+height:auto; margin-top:23%;">
+
+        <div class="container">
+            <div class="row">
+               
+                    <div class="col">
+                        <h4> about us </h4>
+                        <p> we are help developer and designer to find job &Aacute; internship &Aacute; freelancer </p>
+                    </div>
+                    <div class="col">
+                        <h4> Link </h4>
+                        <ul>
+
+                            <li class="list-group text-white"> <a href="#" class="text-white">develop job</a></li>
+                            <li class="list-group text-white"> <a href="#" class="text-white">design job</a></li>
+                            <li class="list-group text-white"> <a href="#" class="text-white">freelancing job</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="col">
+                        <h4> Contact us </h4>
+                        <ul>
+                            <li class="list-group text-white"> <a href="#" class="text-white">Facebook</a></li>
+                            <li class="list-group text-white"> <a href="#" class="text-white">linked in</a></li>
+                            <li class="list-group text-white"> <a href="#" class="text-white">web site </a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="SubFooter shadow-sm text-center ">
+
+                    جميع الحقوق محفوظة 2019-2020 | Ahmed Mahmoud Ahmed
+                </div>
+            </div>
+    </footer>
+
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

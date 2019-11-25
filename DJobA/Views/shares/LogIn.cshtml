@@ -1,0 +1,91 @@
+﻿@using hhhhh.Models
+@using Microsoft.AspNet.Identity;
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "Logoff" }))
+    {
+
+
+
+
+        var db = new ApplicationDbContext();
+        var UserId = User.Identity.GetUserId();
+        var CurrentUser = db.Users.Where(a => a.Id == UserId).SingleOrDefault();
+        @Html.AntiForgeryToken()
+
+
+
+
+
+        <li class="nav-item" style="display:inline-block;">
+            <a class="nav-link">
+                <span class="S">
+                    <i class="fas fa-user-circle"></i>
+                    <strong>Hallo @CurrentUser.UserName</strong>
+                </span>
+            </a>
+        </li>
+
+
+        if (CurrentUser.UType == "Make Offers")
+        {
+
+            <li class="nav-item" style="display:inline-block;">
+
+                <a class="nav-link" href="~/Home/GetJobByPublisher"><span class="S"><i class="fas fa-user-plus"></i> Your Request </span></a>
+
+
+            </li>
+
+            <li class="nav-item" style="display:inline-block;">
+
+                <a class="nav-link" href="~/Jobs/Index"><span class="S"><i class="fas fa-plus-circle"></i> Creat Job </span></a>
+
+            </li>
+        }
+        else
+        {
+            <li class="nav-item" style="display:inline-block;">
+
+                <a class="nav-link" href="~/Home/GetJobsByUser"><span class="S"><i class="fas fa-share-square"></i> Your Request </span></a>
+
+
+            </li>
+        }
+
+
+
+
+
+
+        <li class="nav-item" style="display:inline-block;">
+            <a href="javascript:document.getElementById('Logoff').submit()"
+               class="nav-link"><span class="S"><i class="fas fa-sign-out-alt"></i>  LOG OUT </span></a>
+        </li>
+
+
+
+
+
+
+    }
+}
+else
+{
+    <li class="nav-item" style="display:inline-block;">
+
+        <a class="nav-link" href="~/Account/Login"><span class="S"><i class="fas fa-sign-in-alt"></i> Login </span></a>
+
+
+    </li>
+    <li class="nav-item" style="display:inline-block;">
+
+        <a class="nav-link" href="~/Account/Register"><span class="S"><i class="fas fa-users"></i> Register </span></a>
+
+
+    </li>
+}
+
+
+

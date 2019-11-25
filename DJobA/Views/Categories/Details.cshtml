@@ -1,0 +1,42 @@
+﻿@model DJobA.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/shares/_MainLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div class="form-horizontal card col-md-11 text-secondary" style="background-color:rgba(87, 87, 87, 0.1); font-family:Bahnschrift;
+      height:auto; width:auto">
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryJob)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryJob)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobType)
+        </dd>
+
+    </dl>
+    <center>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.id }, new { @class = "btn btn-primary btn-sm" }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </center>
+</div>
+<br /><br />
+<br />
+

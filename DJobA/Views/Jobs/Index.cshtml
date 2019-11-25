@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DJobA.Models.Job>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/shares/_MainLayout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table-primary table " style="background-color:rgba(87, 87, 87, 0.1) !important;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryJob)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobDescribtion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobImage)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryJob)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobDescribtion)
+            </td>
+            <td>
+               <img src="~/Uploads/@Html.DisplayFor(modelItem => item.JobImage)" class="img-thumbnail"
+ style="height:48px; width:48px;" />            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+<br /><br /><br />
